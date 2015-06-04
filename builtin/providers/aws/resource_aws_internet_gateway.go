@@ -48,6 +48,7 @@ func resourceAwsInternetGatewayCreate(d *schema.ResourceData, meta interface{}) 
 		return err
 	}
 
+	time.Sleep(30 * time.Second)
 	// Attach the new gateway to the correct vpc
 	return resourceAwsInternetGatewayAttach(d, meta)
 }
